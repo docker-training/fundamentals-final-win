@@ -34,8 +34,6 @@ namespace ui.Controllers
             {
                 return "Fail";
             }
-
-            return "https://raw.githubusercontent.com/docker-training/catpics/master/16461916800_e138484673_z.jpg";
         }
 
         [Route("/pet")]
