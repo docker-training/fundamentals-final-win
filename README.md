@@ -11,3 +11,6 @@ docker ps;
 
 ```
 
+# Tools needed:
+
+Visual Studio 2017
