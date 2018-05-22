@@ -10,7 +10,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "database", "database", "{C1
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "api", "api\api.csproj", "{D586DC66-B886-466C-8ED9-56B7DFEAE403}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ui", "ui\ui.csproj", "{73E4CC9C-6AD7-4819-B31C-6948C98C4B40}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ui", "ui\ui.csproj", "{73E4CC9C-6AD7-4819-B31C-6948C98C4B40}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docker", "docker", "{CA177623-D340-4B08-B659-541E6D8198DC}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose-test.yml = docker-compose-test.yml
+		docker-compose.yml = docker-compose.yml
+		readme.txt = readme.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

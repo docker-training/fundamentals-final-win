@@ -1,5 +1,8 @@
 -- create table for images
- 
+
+CREATE DATABASE pets;
+GO
+
 USE [pets]
 GO
 
