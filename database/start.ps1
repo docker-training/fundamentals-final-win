@@ -16,7 +16,7 @@ if($sa_password -ne "_")
 
 # seed the database
 Write-Verbose "Seeding database."
-& sqlcmd -S localhost -U SA -P P@ssw0rd -i c:\init-db.sql
+& sqlcmd -S localhost -U SA -P $sa_password -i c:\init-db.sql
 
 $lastCheck = (Get-Date).AddSeconds(-2) 
 
