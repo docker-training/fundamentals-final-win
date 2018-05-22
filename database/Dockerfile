@@ -1,7 +1,6 @@
 FROM microsoft/mssql-server-windows-developer
 
-ENV sa_password="_" \
-    ACCEPT_EULA="_" 
+ENV sa_password="_" 
 
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
 
