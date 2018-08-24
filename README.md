@@ -13,4 +13,4 @@ docker ps;
 
 # Tools needed:
 
-Visual Studio 2017 with .NET Core and .NET Framework tools.
+Visual Studio 2017 .NET Framework support.
