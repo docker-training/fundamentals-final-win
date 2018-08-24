@@ -13,4 +13,5 @@ docker ps;
 
 # Tools needed:
 
-Visual Studio 2017 .NET Framework support.
+This is a .NET Framework web application, you need Visual Studio 2017 and a Windows OS to be able 
+to build and run this application.
