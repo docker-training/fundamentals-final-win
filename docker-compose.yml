@@ -9,6 +9,8 @@ services:
       - 3000:3000
     depends_on:
       - api
+    networks:
+      - nat
 
   api:
     build: ./api
@@ -17,10 +19,18 @@ services:
       - 8081:80
     depends_on:
       - database
-  
+    networks:
+      - nat
+
   database:
     build: ./database
     image: mssql:latest
     environment:
       - ACCEPT_EULA=Y 
       - sa_password=P@ssw0rd
+    networks:
+      - nat
+
+networks:
+  nat:
+    external: true
