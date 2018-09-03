@@ -22,7 +22,7 @@ namespace ui.Controllers
         private static string GetPet()
         {
             HttpClient client = new HttpClient();
-            HttpResponseMessage response = client.GetAsync("http://localhost:8080/api/pet").Result;
+            HttpResponseMessage response = client.GetAsync("http://api:80/api/pet").Result;
             if(response.IsSuccessStatusCode)
             {
                 var result = response.Content.ReadAsStringAsync().Result;

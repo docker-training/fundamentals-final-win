@@ -1,48 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using System.Net;
 using System.Net.Http;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+using System.Web.Http;
+using api.Models;
 
-namespace ui.Controllers
+namespace api.Controllers
 {
-    public class PetsController : Controller
+    public class PetController : ApiController
     {
-        [Route("/")]
-        public IActionResult Index()
-        {
-            return View();
-        }
+        private ImageService imageService = new ImageService();
 
-        private static string GetPet()
+        public IHttpActionResult GetPet()
         {
-            HttpClient client = new HttpClient();
-            HttpResponseMessage response = client.GetAsync("http://api:80/api/pet").Result;
-            if(response.IsSuccessStatusCode)
+            int max = 13;
+            Random rnd = new Random();
+            int imageId = rnd.Next(1, max+1);
+            Image image = imageService.findById(imageId);
+            if (image == null)
             {
-                var result = response.Content.ReadAsStringAsync().Result;
-                JObject s = JObject.Parse(result);
-                string url = (string)s["url"];
-                return url;
-            } else
-            {
-                return "Fail";
+                return NotFound();
             }
-        }
-
-        [Route("/pet")]
-        public IActionResult Pet()
-        {
-            string hostname = Dns.GetHostName();
-            string url = GetPet();
-            ViewData["url"] = url;
-            ViewData["hostname"] = hostname;
-            return View();
+            return Ok(image);
         }
     }
 }
